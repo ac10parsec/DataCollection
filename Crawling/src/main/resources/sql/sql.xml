@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sql">
+	<!-- m16_t1 -->
+	<select id="t1_select" resultType="hashmap">
+		select * from m16_t1
+	</select>
+	
+	<insert id="t1_insert" parameterType="hashmap">
+		insert into m16_t1 (title, artist, album) values ("${title}", "${artist}", "${album}")
+	</insert>
+	
+	<delete id="t1_delete" parameterType="hashmap">
+		delete from m16_t1 where title = #{title} and album = #{album}
+	</delete>
+	
+	<update id="t1_update">
+		truncate table m16_t1
+	</update>
+	
+	
+	<!-- m16_t2 -->
+	<select id="t2_select" resultType="hashmap">
+		select * from m16_t2
+	</select>
+	
+	<insert id="t2_insert" parameterType="hashmap">
+		insert into m16_t2 (title, term, teacher) values ("${title}", "${term}", "${teacher}")
+	</insert>
+	
+	<delete id="t2_delete" parameterType="hashmap">
+		delete from m16_t2 where title = #{title} and term = #{term}
+	</delete>
+	
+	<update id="t2_update">
+		truncate table m16_t2
+	</update>
+</mapper>
